@@ -336,6 +336,8 @@ def schema_for_column(col_info):
         column_schema['items'] = {'$ref': '#/definitions/sdc_recursive_integer_array'}
     elif col_info.sql_data_type == 'text[]':
         column_schema['items'] = {'$ref': '#/definitions/sdc_recursive_string_array'}
+    elif col_info.sql_data_type == 'character varying[]':
+        column_schema['items'] = {'$ref': '#/definitions/sdc_recursive_string_array'}
     elif col_info.sql_data_type == 'timestamp without time zone[]':
         column_schema['items'] = {'$ref': '#/definitions/sdc_recursive_timestamp_array'}
     elif col_info.sql_data_type == 'timestamp with time zone[]':
